@@ -1,0 +1,32 @@
+{
+  "name": "physics",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joppe/physics.git"
+  },
+  "author": "Joppe Aarts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joppe/physics/issues"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.5.37",
+    "es6-module-loader": "^0.17.11",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.3",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-systemjs": "^0.7.2",
+    "phantomjs-polyfill": "0.0.2",
+    "systemjs": "^0.19.40",
+    "tslint": "^4.3.1",
+    "tslint-rules": "git+https://github.com/joppe/tslint.git#1.0.0",
+    "typescript": "^2.0.6"
+  }
+}
