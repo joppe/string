@@ -4,7 +4,9 @@
         "module": "system",
         "removeComments": true,
         "sourceMap": true,
-        "outDir": "dist"
+        "outDir": "dist",
+        "outFile": "dist/string.min.js",
+        "moduleResolution": "Node"
     },
     "include": [
         "src/**/*"
