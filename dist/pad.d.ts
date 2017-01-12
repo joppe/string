@@ -1,5 +1,5 @@
 export interface PadFunctionInterface {
-    (source: string, char: string, length: number, type: number): string;
+    (source: string, char: string, length: number, type?: number): string;
 }
 export declare enum padType {
     Left = 0,
