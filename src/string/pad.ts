@@ -11,7 +11,7 @@ export interface PadFunctionInterface {
      * @param {number} type
      * @returns {number}
      */
-    (source:string, char:string, length:number, type:number):string;
+    (source:string, char:string, length:number, type?:number):string;
 }
 
 /**
