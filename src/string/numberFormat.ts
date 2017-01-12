@@ -5,7 +5,7 @@ const THREE_DIGITS:RegExp = /(\d{3})/g;
 /**
  * @interface NumberFormatFunctionInterface
  */
-interface NumberFormatFunctionInterface {
+export interface NumberFormatFunctionInterface {
     /**
      * @param {string} input
      * @param {number} decimalCount
@@ -25,7 +25,7 @@ interface NumberFormatFunctionInterface {
  */
 export const numberFormat:NumberFormatFunctionInterface = (input:number, decimalCount:number = 2, decimalPoint:string = '.', thousandsSeperator:string = ','):string => {
     const str:string = input.toFixed(decimalCount);
-    const [integer, fraction]:string = str.split('.');
+    const [integer, fraction]:string[] = str.split('.');
     const reversedInteger:string = string.reverse(integer);
     const reversedSeparatedInteger:string = reversedInteger.replace(THREE_DIGITS, (match:string):string => {
         return `${match}${thousandsSeperator}`;
