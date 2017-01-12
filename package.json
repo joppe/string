@@ -27,6 +27,6 @@
     "systemjs": "^0.19.40",
     "tslint": "^4.3.1",
     "tslint-rules": "git+https://github.com/joppe/tslint.git#1.0.0",
-    "typescript": "^2.0.6"
+    "typescript": "^2.1.5"
   }
 }

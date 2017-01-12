@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
-        "target": "es6",
+        "declaration": true,
         "module": "system",
+        "moduleResolution": "Node",
+        "outDir": "dist",
         "removeComments": true,
         "sourceMap": true,
-        "outDir": "dist",
-        "outFile": "dist/string.min.js",
-        "moduleResolution": "Node"
+        "target": "es5"
     },
     "include": [
         "src/**/*"

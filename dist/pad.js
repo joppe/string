@@ -1,7 +1,7 @@
 System.register(["./repeat"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var string, Direction, pad;
+    var string, padType, pad;
     return {
         setters: [
             function (string_1) {
@@ -9,25 +9,25 @@ System.register(["./repeat"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            (function (Direction) {
-                Direction[Direction["Left"] = 0] = "Left";
-                Direction[Direction["Right"] = 1] = "Right";
-            })(Direction || (Direction = {}));
-            exports_1("Direction", Direction);
-            exports_1("pad", pad = (source, char, length, type = Direction.Left) => {
-                let target = source.toString();
-                if (target.length >= length) {
-                    return target;
+            (function (padType) {
+                padType[padType["Left"] = 0] = "Left";
+                padType[padType["Right"] = 1] = "Right";
+            })(padType || (padType = {}));
+            exports_1("padType", padType);
+            exports_1("pad", pad = function (input, char, length, type) {
+                if (type === void 0) { type = padType.Left; }
+                var output = input.toString();
+                if (output.length < length) {
+                    var count = length - output.length;
+                    var affix = string.repeat(char, count);
+                    if (padType.Left === type) {
+                        output = affix + output;
+                    }
+                    else if (padType.Right === type) {
+                        output += affix;
+                    }
                 }
-                const count = length - target.length;
-                const affix = string.repeat(char, count);
-                if (Direction.Left === type) {
-                    target = affix + target;
-                }
-                else if (Direction.Right === type) {
-                    target += affix;
-                }
-                return target;
+                return output;
             });
         }
     };

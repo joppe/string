@@ -1,6 +1,23 @@
 import * as string from './repeat';
 
-export enum Direction {
+/**
+ * @interface
+ */
+export interface PadFunctionInterface {
+    /**
+     * @param {string} source
+     * @param {string} char
+     * @param {number} length
+     * @param {number} type
+     * @returns {number}
+     */
+    (source:string, char:string, length:number, type:number):string;
+}
+
+/**
+ * Indicates if the characters are used as prefix or as suffix
+ */
+export enum padType {
     Left,
     Right
 }
@@ -11,28 +28,26 @@ export enum Direction {
  * The technique used is to create an array of fixed length and join the (empty) parts together
  * with the provided char.
  *
- * @param {string} source
+ * @param {string} input
  * @param {string} char
  * @param {number} length
  * @param {number} [type]
  * @returns {string}
  */
-export const pad:Function = (source:string, char:string, length:number, type:number = Direction.Left):string => {
-    let target:string = source.toString();
+export const pad:PadFunctionInterface = (input:string, char:string, length:number, type:number = padType.Left):string => {
+    let output:string = input.toString();
 
-    // guard: stop if the given string is already of the desired length
-    if (target.length >= length) {
-        return target;
+    // only add characters if the output string is not of the desired length
+    if (output.length < length) {
+        const count:number = length - output.length;
+        const affix:string = string.repeat(char, count);
+
+        if (padType.Left === type) {
+            output = affix + output;
+        } else if (padType.Right === type) {
+            output += affix;
+        }
     }
 
-    const count:number = length - target.length;
-    const affix:string = string.repeat(char, count);
-
-    if (Direction.Left === type) {
-        target = affix + target;
-    } else if (Direction.Right === type) {
-        target += affix;
-    }
-
-    return target;
+    return output;
 };
