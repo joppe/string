@@ -17,7 +17,7 @@ export interface PadFunctionInterface {
 /**
  * Indicates if the characters are used as prefix or as suffix
  */
-export enum padType {
+export enum PadType {
     Left,
     Right
 }
@@ -31,10 +31,10 @@ export enum padType {
  * @param {string} input
  * @param {string} char
  * @param {number} length
- * @param {number} [type]
+ * @param {PadType} [type]
  * @returns {string}
  */
-export const pad:PadFunctionInterface = (input:string, char:string, length:number, type:number = padType.Left):string => {
+export const pad:PadFunctionInterface = (input:string, char:string, length:number, type:PadType = PadType.Right):string => {
     let output:string = input.toString();
 
     // only add characters if the output string is not of the desired length
@@ -42,9 +42,9 @@ export const pad:PadFunctionInterface = (input:string, char:string, length:numbe
         const count:number = length - output.length;
         const affix:string = string.repeat(char, count);
 
-        if (padType.Left === type) {
+        if (PadType.Left === type) {
             output = affix + output;
-        } else if (padType.Right === type) {
+        } else if (PadType.Right === type) {
             output += affix;
         }
     }
