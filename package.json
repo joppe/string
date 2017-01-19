@@ -6,11 +6,16 @@
   "scripts": {
     "test": "karma start karma.conf.js --single-run --no-auto-watch --reporters dots"
   },
+  "keywords": [
+    "JavaScript",
+    "TypeScript",
+    "String utility functions"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/joppe/physics.git"
   },
-  "author": "Joppe Aarts",
+  "author": "Joppe Aarts <joppe@apestaartje.info>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/joppe/physics/issues"
