@@ -53,7 +53,7 @@ repeat(input:string, count:number):string
 ```
 
 Usage:
-```ecmascript 6
+```javascript
 import * as string from 'dist/repeat';
 
 const input = 'foo';
