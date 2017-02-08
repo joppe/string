@@ -15,7 +15,7 @@ reverse(input:string):string
 ```
 
 Usage:
-```ecmascript 6
+```javascript
 import * as string from 'dist/reverse';
 
 const input = 'Hello World';
@@ -34,7 +34,7 @@ pad(input:string, char:string, length:number, type?:PadType):string
 ```
 
 Usage:
-```ecmascript 6
+```javascript
 import * as string from 'dist/pad';
 
 const input = '1';
