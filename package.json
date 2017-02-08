@@ -1,10 +1,11 @@
 {
   "name": "string",
   "version": "1.0.0",
-  "description": "",
+  "description": "A library with string utility functions.",
   "main": "index.js",
+  "directories": {},
   "scripts": {
-    "test": "karma start karma.conf.js --single-run --no-auto-watch --reporters dots"
+    "test": "karma start"
   },
   "keywords": [
     "JavaScript",
@@ -13,26 +14,28 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/joppe/physics.git"
+    "url": "https://github.com/joppe/string.git"
   },
-  "author": "Joppe Aarts <joppe@apestaartje.info>",
+  "author": {
+    "name": "Joppe Aarts",
+    "email": "joppe@apestaartje.info"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joppe/physics/issues"
+    "url": "https://github.com/joppe/string/issues"
   },
+  "homepage": "https://github.com/joppe/string#readme",
   "devDependencies": {
-    "@types/jasmine": "^2.5.37",
-    "babel-polyfill": "^6.20.0",
-    "es6-module-loader": "^0.17.11",
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.13.3",
-    "karma-jasmine": "^0.3.5",
+    "@types/jasmine": "^2.5.41",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.1",
+    "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.2",
-    "karma-systemjs": "^0.7.2",
-    "phantomjs-polyfill": "0.0.2",
-    "systemjs": "^0.19.40",
-    "tslint": "^4.3.1",
+    "karma-webpack": "^2.0.2",
+    "phantomjs": "^2.1.7",
+    "ts-loader": "^2.0.0",
     "tslint-rules": "git+https://github.com/joppe/tslint.git#1.0.0",
-    "typescript": "^2.1.5"
+    "typescript": "^2.1.5",
+    "webpack": "^2.2.1"
   }
 }

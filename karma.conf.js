@@ -1,5 +1,7 @@
 // Karma configuration
-// Generated on Tue May 17 2016 15:02:49 GMT+0200 (CEST)
+
+
+var webpackConfig = require('./webpack.config.js');
 
 module.exports = function (config) {
     config.set({
@@ -11,25 +13,7 @@ module.exports = function (config) {
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: [
-            'systemjs',
             'jasmine'
-        ],
-
-
-        // list of files / patterns to load in the browser
-        files: [
-            'node_modules/babel-polyfill/dist/polyfill.js',
-
-            {
-                pattern: 'src/**/*',
-                served: true,
-                included: false
-            },
-            {
-                pattern: 'test/unit/**/*',
-                served: true,
-                included: false
-            }
         ],
 
 
@@ -37,38 +21,33 @@ module.exports = function (config) {
         exclude: [],
 
 
-        // preprocess matching files before serving them to the browser
-        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {},
+        files: [
+            {
+                pattern: 'test/unit/**/*.spec.ts',
+                watched: false
+            }
+        ],
 
+        preprocessors: {
+            'test/unit/**/*.spec.ts': ['webpack']
+        },
 
-        systemjs: {
-            config: {
-                paths: {
-                    'es6-module-loader': 'node_modules/es6-module-loader/dist/es6-module-loader.js',
-                    'phantomjs-polyfill': 'node_modules/phantomjs-polyfill/bind-polyfill.js',
-                    systemjs: 'node_modules/systemjs/dist/system.js',
-                    'system-polyfills': 'node_modules/systemjs/dist/system-polyfills.js',
-                    typescript: 'node_modules/typescript/lib/typescript.js'
-                },
+        webpack: {
+            module: webpackConfig.module,
+            resolve: webpackConfig.resolve
+        },
 
-                packages: {
-                    'src': {
-                        defaultExtension: 'ts'
-                    }
-                },
-
-                transpiler: 'typescript'
-            },
-
-            testFileSuffix: '.spec.ts'
+        webpackMiddleware: {
+            // webpack-dev-middleware configuration
+            // i. e.
+            stats: 'errors-only'
         },
 
 
-        plugins : [
-            'karma-systemjs',
+        plugins: [
             'karma-jasmine',
-            'karma-phantomjs-launcher'
+            'karma-phantomjs-launcher',
+            'karma-webpack'
         ],
 
 

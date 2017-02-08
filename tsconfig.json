@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
         "declaration": true,
-        "module": "system",
-        "moduleResolution": "Node",
+        "module": "commonjs",
         "outDir": "dist",
         "removeComments": true,
         "sourceMap": true,
@@ -10,5 +9,8 @@
     },
     "include": [
         "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }

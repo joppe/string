@@ -14,7 +14,7 @@ typescript:
 
 typescript-watch:
 	@echo "Transpile typescript (watching for changes)"
-	$(PWD)/node_modules/.bin/tsc --project src  --watch
+	$(PWD)/node_modules/.bin/tsc --project ./  --watch
 
 .PHONY: karma
 karma:
@@ -29,6 +29,6 @@ lint:
 setup: npm typescript
 
 clean:
-	@echt "Remove node_modules and transpiled javascript files"
+	@echo "Remove node_modules and transpiled javascript files"
 	rm -rf $(PWD)/node_modules
-	cd $(PWD)/dist && rm *.js
+	cd $(PWD)/dist && rm *
