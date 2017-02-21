@@ -30,21 +30,14 @@ module.exports = function (config) {
          */
         {
             test: /\.ts$/,
-            use: [
-                {
-                    loader: 'awesome-typescript-loader',
-                    query: {
-                        // use inline sourcemaps for "karma-remap-coverage" reporter
-                        sourceMap: false,
-                        inlineSourceMap: true,
-                        compilerOptions: {
-                            // Remove TypeScript helpers to be injected
-                            // below by DefinePlugin
-                            removeComments: true
-                        }
-                    }
+            loader: 'ts-loader',
+            options: {
+                compilerOptions: {
+                    inlineSourceMap: true,
+                    removeComments: true,
+                    sourceMap: false
                 }
-            ]
+            }
         },
 
         /**

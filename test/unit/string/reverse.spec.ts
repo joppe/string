@@ -1,4 +1,4 @@
-import {reverse} from './../../../src/string/reverse';
+import {reverse} from '../../../src/reverse';
 
 describe('reverse', ():void => {
     it('reverse a string', ():void => {

@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 
 /**
  * Webpack configuration
@@ -7,15 +8,14 @@ const webpack = require('webpack');
  */
 const config = {
     entry: {
-        'dist/string/pad': './src/string/pad.ts',
-        'dist/string/repeat': './src/string/pad.ts',
-        'dist/string/reverse': './src/string/pad.ts'
-
+        'dist/pad': './src/pad.ts',
+        'dist/repeat': './src/repeat.ts',
+        'dist/reverse': './src/reverse.ts'
     },
 
     output: {
         filename: '[name].js',
-        path: './'
+        path: path.resolve(__dirname)
     },
 
     /**
@@ -70,7 +70,7 @@ const config = {
              */
             {
                 test: /\.(t|j)sx?$/,
-                loader: 'awesome-typescript-loader'
+                loader: 'ts-loader'
             }
         ]
     },

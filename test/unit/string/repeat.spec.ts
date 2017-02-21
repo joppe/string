@@ -1,4 +1,4 @@
-import * as string from './../../../src/string/repeat';
+import * as string from '../../../src/repeat';
 
 describe('repeat', ():void => {
     it('repeat the string by a given number', ():void => {
