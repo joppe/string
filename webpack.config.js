@@ -1,8 +1,4 @@
-/**
- * @author: @AngularClass
- */
-
-const path = require('path');
+const webpack = require('webpack');
 
 /**
  * Webpack configuration
@@ -10,13 +6,25 @@ const path = require('path');
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
 const config = {
+    entry: {
+        'dist/string/pad': './src/string/pad.ts',
+        'dist/string/repeat': './src/string/pad.ts',
+        'dist/string/reverse': './src/string/pad.ts'
+
+    },
+
+    output: {
+        filename: '[name].js',
+        path: './'
+    },
+
     /**
      * Source map for Karma from the help of karma-sourcemap-loader &  karma-webpack
      *
      * Do not change, leave as is or it wont work.
      * See: https://github.com/webpack/karma-webpack#source-maps
      */
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
 
     /**
      * Options affecting the resolving of modules.
@@ -61,41 +69,9 @@ const config = {
              * See: https://github.com/s-panferov/awesome-typescript-loader
              */
             {
-                test: /\.ts$/,
-                use: [
-                    {
-                        loader: 'awesome-typescript-loader',
-                        query: {
-                            // use inline sourcemaps for "karma-remap-coverage" reporter
-                            sourceMap: false,
-                            inlineSourceMap: true,
-                            compilerOptions: {
-                                // Remove TypeScript helpers to be injected
-                                // below by DefinePlugin
-                                removeComments: true
-                            }
-                        }
-                    }
-                ]
-            },
-
-            /**
-             * Instruments JS files with Istanbul for subsequent code coverage reporting.
-             * Instrument only testing sources.
-             *
-             * See: https://github.com/deepsweet/istanbul-instrumenter-loader
-             */
-            {
-                enforce: 'post',
-                test: /\.(js|ts)$/,
-                loader: 'istanbul-instrumenter-loader',
-                include: path.resolve('src'),
-                exclude: [
-                    /\.(spec)\.ts$/,
-                    /node_modules/
-                ]
+                test: /\.(t|j)sx?$/,
+                loader: 'awesome-typescript-loader'
             }
-
         ]
     },
 
@@ -105,6 +81,9 @@ const config = {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: true
+        })
     ]
 };
 

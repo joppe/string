@@ -3,9 +3,70 @@
  */
 
 module.exports = function (config) {
-    var webpackConfig = require('./webpack.config.js');
+    const path = require('path');
+    const webpackConfig = require('./webpack.config.js');
 
-    var configuration = {
+    delete webpackConfig.entry;
+    delete webpackConfig.output;
+
+    webpackConfig.devtool = 'inline-source-map';
+    webpackConfig.module.rules = [
+        /**
+         * Source map loader support for *.js files
+         * Extracts SourceMaps for source files that as added as sourceMappingURL comment.
+         *
+         * See: https://github.com/webpack/source-map-loader
+         */
+        {
+            enforce: 'pre',
+            test: /\.js$/,
+            loader: 'source-map-loader'
+        },
+
+        /**
+         * Typescript loader support for .ts
+         *
+         * See: https://github.com/s-panferov/awesome-typescript-loader
+         */
+        {
+            test: /\.ts$/,
+            use: [
+                {
+                    loader: 'awesome-typescript-loader',
+                    query: {
+                        // use inline sourcemaps for "karma-remap-coverage" reporter
+                        sourceMap: false,
+                        inlineSourceMap: true,
+                        compilerOptions: {
+                            // Remove TypeScript helpers to be injected
+                            // below by DefinePlugin
+                            removeComments: true
+                        }
+                    }
+                }
+            ]
+        },
+
+        /**
+         * Instruments JS files with Istanbul for subsequent code coverage reporting.
+         * Instrument only testing sources.
+         *
+         * See: https://github.com/deepsweet/istanbul-instrumenter-loader
+         */
+        {
+            enforce: 'post',
+            test: /\.(js|ts)$/,
+            loader: 'istanbul-instrumenter-loader',
+            include: path.resolve('src'),
+            exclude: [
+                /\.(spec)\.ts$/,
+                /node_modules/
+            ]
+        }
+
+    ];
+
+    const configuration = {
 
         // base path that will be used to resolve all patterns (e.g. files, exclude)
         basePath: '',
