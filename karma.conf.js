@@ -23,21 +23,23 @@ module.exports = function (config) {
             loader: 'source-map-loader'
         },
 
-        /**
-         * Typescript loader support for .ts
-         *
-         * See: https://github.com/s-panferov/awesome-typescript-loader
-         */
         {
             test: /\.ts$/,
-            loader: 'ts-loader',
-            options: {
-                compilerOptions: {
-                    inlineSourceMap: true,
-                    removeComments: true,
-                    sourceMap: false
+            use: [
+                {
+                    loader: 'ts-loader',
+                    query: {
+                        // use inline sourcemaps for "karma-remap-coverage" reporter
+                        sourceMap: false,
+                        inlineSourceMap: true,
+                        compilerOptions: {
+                            // Remove TypeScript helpers to be injected
+                            // below by DefinePlugin
+                            removeComments: true
+                        }
+                    }
                 }
-            }
+            ]
         },
 
         /**
