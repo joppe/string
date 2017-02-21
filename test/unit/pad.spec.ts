@@ -1,4 +1,4 @@
-import * as string from '../../../src/pad';
+import * as string from '../../src/pad';
 
 describe('pad', ():void => {
     it('default pads right', ():void => {
