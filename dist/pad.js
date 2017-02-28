@@ -1,2 +1,22 @@
-!function(t){function r(e){if(n[e])return n[e].exports;var o=n[e]={i:e,l:!1,exports:{}};return t[e].call(o.exports,o,o.exports,r),o.l=!0,o.exports}var n={};return r.m=t,r.c=n,r.i=function(t){return t},r.d=function(t,n,e){r.o(t,n)||Object.defineProperty(t,n,{configurable:!1,enumerable:!0,get:e})},r.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(n,"a",n),n},r.o=function(t,r){return Object.prototype.hasOwnProperty.call(t,r)},r.p="",r(r.s=1)}([function(t,r,n){"use strict";r.repeat=function(t,r){if(0>r)throw new Error('Count must be a positive number, "'+r+'" given.');return new Array(Math.floor(r)+1).join(t)}},function(t,r,n){"use strict";var e,o=n(0);!function(t){t[t.Left=0]="Left",t[t.Right=1]="Right"}(e=r.PadType||(r.PadType={})),r.pad=function(t,r,n,i){void 0===i&&(i=e.Right);var u=t.toString();if(u.length<n){var f=n-u.length,a=o.repeat(r,f);e.Left===i?u=a+u:e.Right===i&&(u+=a)}return u}}]);
+"use strict";
+const string = require("./repeat");
+var PadType;
+(function (PadType) {
+    PadType[PadType["Left"] = 0] = "Left";
+    PadType[PadType["Right"] = 1] = "Right";
+})(PadType = exports.PadType || (exports.PadType = {}));
+exports.pad = (input, char, length, type = PadType.Right) => {
+    let output = input.toString();
+    if (output.length < length) {
+        const count = length - output.length;
+        const affix = string.repeat(char, count);
+        if (PadType.Left === type) {
+            output = affix + output;
+        }
+        else if (PadType.Right === type) {
+            output += affix;
+        }
+    }
+    return output;
+};
 //# sourceMappingURL=pad.js.map

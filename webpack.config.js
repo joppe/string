@@ -7,11 +7,7 @@ const path = require('path');
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
 const config = {
-    entry: {
-        'dist/pad': './src/pad.ts',
-        'dist/repeat': './src/repeat.ts',
-        'dist/reverse': './src/reverse.ts'
-    },
+    entry: {},
 
     output: {
         filename: '[name].js',
