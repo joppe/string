@@ -28,7 +28,6 @@ const config = {
      * See: http://webpack.github.io/docs/configuration.html#resolve
      */
     resolve: {
-
         /**
          * An array of extensions that should be used to resolve modules.
          *
