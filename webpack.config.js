@@ -60,8 +60,6 @@ const config = {
 
             /**
              * Typescript loader support for .ts
-             *
-             * See: https://github.com/s-panferov/awesome-typescript-loader
              */
             {
                 test: /\.(t|j)sx?$/,
