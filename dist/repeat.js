@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.repeat = (input, count) => {
     if (0 > count) {
         throw new Error(`Count must be a positive number, "${count}" given.`);

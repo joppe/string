@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const string = require("./repeat");
 var PadType;
 (function (PadType) {
