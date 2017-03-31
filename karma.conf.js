@@ -115,7 +115,8 @@ module.exports = function (config) {
         remapCoverageReporter: {
             'text-summary': null,
             json: './coverage/coverage.json',
-            html: './coverage/html'
+            html: './coverage/html',
+            clover: './coverage/clover.xml'
         },
 
         // Webpack please don't spam the console when running in karma!
