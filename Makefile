@@ -26,6 +26,9 @@ lint:
 	echo "Run tslint"
 	node $(PWD)/node_modules/.bin/tslint --config $(PWD)/node_modules/tslint-rules/tslint.json --project $(PWD)/tsconfig.json
 
+generate-checkstyle:
+	node $(PWD)/node_modules/.bin/tslint --config $(PWD)/node_modules/tslint-rules/tslint.json --project $(PWD)/tsconfig.json --format checkstyle --out ./tslint-checkstyle.xml
+
 setup: npm webpack
 
 clean:
