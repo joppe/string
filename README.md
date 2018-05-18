@@ -5,4 +5,4 @@ are available in the `dist` folder.
 Each function is in it's own file, therefore if you want to use one specific function you don't need to import a whole
 bunch of unwanted code.
 
-For the docs of the functions see the docs folder.
+For the docs of the functions see the [docs](docs/) folder.
