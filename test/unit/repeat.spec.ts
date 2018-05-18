@@ -9,12 +9,19 @@ describe('repeat', (): void => {
         expect(string.repeat('', 2)).toBe('');
     });
 
-    it('repeating a string 0 times will result in an empty string', (): void => {
-        expect(string.repeat('foo', 0)).toBe('');
+    it('repeating a string less then 1 time will result in an empty string', (): void => {
+        expect(() => {
+            string.repeat('foo', -3);
+        }).toThrow();
+        expect(() => {
+            string.repeat('foo', 0);
+        }).toThrow();
     });
 
-    it('if a float is passed, cast it to integer', (): void => {
-        expect(string.repeat('foobar', 3.9)).toBe('foobarfoobarfoobar');
+    it('the number of times to repeat must be an integer', (): void => {
+        expect(() => {
+            string.repeat('foo', 3.9);
+        }).toThrow();
     });
 
     it('throw an error if the count smaller then zero', (): void => {
