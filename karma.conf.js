@@ -36,10 +36,10 @@ module.exports = function (config) {
                 'test/**/*'
             ],
             reports: {
-                clover: {
+                lcovonly: {
                     directory: 'coverage',
-                    subdirectory: 'clover',
-                    filename: 'coverage.xml'
+                    subdirectory: 'lcovonly',
+                    filename: 'lcov.info'
                 },
                 'html': {
                     directory: 'coverage',
