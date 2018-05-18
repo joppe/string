@@ -26,6 +26,7 @@
   "devDependencies": {
     "@types/jasmine": "^2.8.6",
     "awesome-typescript-loader": "^3.4.1",
+    "coveralls": "^3.0.1",
     "jasmine-core": "^2.99.0",
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
