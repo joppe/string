@@ -1,5 +1,5 @@
 {
-  "name": "@aap/string",
+  "name": "@joppe/string",
   "version": "2.0.0",
   "description": "A library with string utility functions.",
   "scripts": {
