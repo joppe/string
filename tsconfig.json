@@ -3,7 +3,7 @@
         "baseUrl": "./",
         "declaration": true,
         "experimentalDecorators": true,
-        "module": "commonjs",
+        "module": "es6",
         "moduleResolution": "node",
         "outDir": "dist",
         "paths": {
