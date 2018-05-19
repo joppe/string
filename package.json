@@ -3,14 +3,15 @@
   "version": "2.0.2",
   "description": "A library with string utility functions.",
   "scripts": {
-    "build": "npm run clean && webpack",
+    "build": "npm run clean && node ./node_modules/.bin/tsc",
     "clean": "rm -rf {dist,coverage}",
-    "dev": "webpack-dev-server",
     "lint": "tslint --config ./tslint.json --project tsconfig.json",
     "prepublishOnly": "npm run build",
     "test": "karma start karma.conf.js",
     "test:watch": "karma start karma.conf.js --no-single-run --auto-watch"
   },
+  "main": "dist/index",
+  "typings": "dist/index",
   "repository": {
     "type": "git",
     "url": "https://github.com/joppe/string"
@@ -37,7 +38,9 @@
     "source-map-loader": "^0.2.3",
     "tslint": "^5.9.1",
     "tslint-microsoft-contrib": "^5.0.2",
-    "typescript": "^2.7.1",
-    "webpack": "^3.10.0"
-  }
+    "typescript": "^2.7.1"
+  },
+  "files": [
+    "dist"
+  ]
 }
