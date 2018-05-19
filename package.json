@@ -4,7 +4,7 @@
   "description": "A library with string utility functions.",
   "scripts": {
     "build": "npm run clean && node ./node_modules/.bin/tsc",
-    "clean": "rm -rf {dist,coverage}",
+    "clean": "rm -rf dist",
     "lint": "tslint --config ./tslint.json --project tsconfig.json",
     "prepublishOnly": "npm run build",
     "test": "karma start karma.conf.js",
