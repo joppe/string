@@ -1,4 +1,4 @@
-import * as string from 'number/repeat';
+import { repeat } from 'string/repeat';
 
 /**
  * Put a character in front (or at the end) of a string.
@@ -23,7 +23,7 @@ export const pad: PadFunction = (input: string, char: string, length: number, ty
     // only add characters if the output string is not of the desired length
     if (output.length < length) {
         const count: number = length - output.length;
-        const affix: string = string.repeat(char, count);
+        const affix: string = repeat(char, count);
 
         if (PadType.Left === type) {
             output = affix + output;
