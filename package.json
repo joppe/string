@@ -3,9 +3,11 @@
   "version": "2.0.2",
   "description": "A library with string utility functions.",
   "scripts": {
-    "build": "webpack",
+    "build": "npm run clean && webpack",
+    "clean": "rm -rf {dist,coverage}",
     "dev": "webpack-dev-server",
     "lint": "tslint --config ./tslint.json --project tsconfig.json",
+    "prepublishOnly": "npm run build",
     "test": "karma start karma.conf.js",
     "test:watch": "karma start karma.conf.js --no-single-run --auto-watch"
   },
