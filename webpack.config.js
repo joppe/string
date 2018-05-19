@@ -33,7 +33,7 @@ const config = {
     },
     resolve: {
         alias: {
-            number: path.resolve(__dirname, 'src')
+            string: path.resolve(__dirname, 'src')
         },
         extensions: [
             '.js', '.ts', '.tsx'
