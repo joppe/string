@@ -1,4 +1,4 @@
-import { repeat } from 'string/repeat';
+import { repeat } from './repeat';
 
 /**
  * Put a character in front (or at the end) of a string.
