@@ -1,6 +1,6 @@
 {
   "name": "@apestaartje/string",
-  "version": "2.1.1",
+  "version": "2.1.0",
   "description": "A library with string utility functions.",
   "scripts": {
     "build": "npm run clean && node ./node_modules/.bin/tsc",
