@@ -24,6 +24,11 @@ module.exports = function (config) {
         ],
 
         karmaTypescriptConfig: {
+            bundlerOptions: {
+                transforms: [
+                    require('karma-typescript-es6-transform')()
+                ]
+            },
             coverageOptions: {
                 exclude: [
                     /\.(d|spec|test)\.ts$/i,
@@ -48,7 +53,8 @@ module.exports = function (config) {
                 }
             },
             compilerOptions: {
-                module: 'commonjs'
+                module: 'commonjs',
+                sourceMap: true
             },
             tsconfig: './tsconfig.json'
 
