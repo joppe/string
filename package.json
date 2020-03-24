@@ -7,8 +7,8 @@
     "clean": "rm -rf dist",
     "lint": "tslint --config ./tslint.json --project tsconfig.json",
     "prepublishOnly": "npm run build",
-    "test": "karma start karma.conf.js",
-    "test:watch": "karma start karma.conf.js --no-single-run --auto-watch"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "main": "dist/index",
   "typings": "dist/index",
@@ -22,21 +22,17 @@
   },
   "license": "MIT",
   "keywords": [
-    "JavaScript",
     "TypeScript",
     "String utility functions"
   ],
   "devDependencies": {
-    "@types/jasmine": "^3.3.0",
-    "jasmine-core": "^3.3.0",
-    "karma": "^3.1.1",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^2.0.1",
-    "karma-typescript": "^3.0.13",
-    "karma-typescript-es6-transform": "^1.0.4",
-    "tslint": "^5.11.0",
-    "tslint-microsoft-contrib": "^5.2.1",
-    "typescript": "^3.2.1"
+    "@types/jest": "^25.1.4",
+    "coveralls": "^3.0.11",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "tslint": "^6.1.0",
+    "tslint-microsoft-contrib": "^6.2.0",
+    "typescript": "^3.8.3"
   },
   "files": [
     "dist"

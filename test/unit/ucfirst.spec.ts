@@ -1,4 +1,4 @@
-import { ucfirst } from '../../src/ucfirst';
+import { ucfirst } from '@apestaartje/string/ucfirst';
 
 describe('ucfirst', (): void => {
     it('Makes the first char of a string uppercase', (): void => {

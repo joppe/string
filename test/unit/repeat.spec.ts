@@ -1,4 +1,4 @@
-import { repeat } from '../../src/repeat';
+import { repeat } from '@apestaartje/string/repeat';
 
 describe('repeat', (): void => {
     it('repeat the string by a given number', (): void => {

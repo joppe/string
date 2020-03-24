@@ -5,5 +5,7 @@
 export type ReverseFunction = (input: string) => string;
 
 export const reverse: ReverseFunction = (input: string): string => {
-    return input.split('').reverse().join('');
+    return input.split('')
+        .reverse()
+        .join('');
 };

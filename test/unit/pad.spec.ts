@@ -1,4 +1,4 @@
-import { pad, PadType } from '../../src/pad';
+import { pad, PadType } from '@apestaartje/string/pad';
 
 describe('pad', (): void => {
     it('default pads right', (): void => {

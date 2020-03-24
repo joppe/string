@@ -1,4 +1,4 @@
-import { reverse } from '../../src/reverse';
+import { reverse } from '@apestaartje/string/reverse';
 
 describe('reverse', (): void => {
     it('reverse a string', (): void => {
